@@ -56,7 +56,7 @@
         flex: 3;
         height: 100%;
         text-align: center;
-        transition: all 0.8s;
+        transition: all 1s;
         position: relative;
       }
       #mainMenu > ul {
@@ -68,7 +68,7 @@
       }
       header > div:hover {
         background-color: #ffffff;
-        transition: all 0.3s;
+        transition: all 1s;
       }
       #mainMenu > ul > li {
         display: inline-block;
@@ -92,7 +92,7 @@
         transition: all 0.3s;
         visibility: hidden;
       }
-      #mainMenu > ul > li>a:hover {
+      #mainMenu > ul > li > a:hover {
         color: #194e91;
         transition: all 0.3s;
       }
@@ -103,11 +103,12 @@
         color: #194e91;
       }
       #subTab {
-        background-color: #ffffff93;
+        background-color: #ffffff;
         position: absolute;
         top: 100%;
         left: 50%;
         transform: translateX(-50%);
+        border-radius: 0px 0px 50px 80px;
         width: 100vw;
         height: 300px;
         display: none;
@@ -131,7 +132,7 @@
         padding: 10px 15px;
         /* background-color: aquamarine; */
       }
-      .subMenu > li > a:hover{
+      .subMenu > li > a:hover {
         font-weight: 600;
       }
       #search {
@@ -291,6 +292,5 @@
         $('#subTab').slideUp(300);
       })
     })
-
   </script>
 </html>
