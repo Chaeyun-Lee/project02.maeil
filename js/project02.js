@@ -36,3 +36,16 @@
     });
   }
 
+  // 화살표 클릭 시 좌우로 슬라이드
+  
+  const backArrow = document.querySelector('.backArrow');
+  const forwardArrow = document.querySelector('.forwardArrow');
+  const brandsSlide = document.querySelector('#brandsSlide');
+
+  forwardArrow.addEventListener('click',function(){
+    brandsSlide.style.transform='translateX(-800px)';
+  })
+
+  backArrow.addEventListener('click',function(){
+    brandsSlide.style.transform='translateX(800px)';
+  })
