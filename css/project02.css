@@ -60,7 +60,6 @@ header > div:hover {
 #mainMenu > ul > li {
   display: inline-block;
   width: 15%;
-  border: 1px solid #ccc;
   position: relative;
 }
 #mainMenu > ul > li > a {
@@ -70,6 +69,33 @@ header > div:hover {
   font-weight: 600;
   transition: all 0.3s;
   position: relative;
+}
+#mainMenu > ul > li > a:before, #mainMenu > ul > li > a:after {
+  content: "";
+  position: absolute;
+  width: 0%;
+  height: 4px;
+  bottom: -2px;
+  margin-top: -0.5px;
+  background: #194e91;
+}
+#mainMenu > ul > li > a:before {
+  left: -1.5px;
+}
+#mainMenu > ul > li > a:after {
+  right: 1.5px;
+  background: #194e91;
+  transition: width 0.8s cubic-bezier(0.22, 0.61, 0.36, 1);
+}
+#mainMenu > ul > li > a:hover:before {
+  background: #194e91;
+  width: 100%;
+  transition: width 0.5s cubic-bezier(0.22, 0.61, 0.36, 1);
+}
+#mainMenu > ul > li > a:hover:after {
+  background: transparent;
+  width: 100%;
+  transition: 0s;
 }
 #mainMenu > ul > li > a > span {
   position: absolute;
@@ -162,8 +188,9 @@ header > div:hover {
   display: none;
 }
 #fullpageCover {
-  width: 100%;
-  height: 100%;
+  width: 100vw;
+  height: 100vh;
+  border:1px solid darkblue;
   background-color: #33333310;
   position: relative;
 }
@@ -195,8 +222,12 @@ header > div:hover {
 }
 /*-------------Main CSS 시작 ------------*/
 main {
+  width:100vw;
+  height:1600px;
   padding: 0px 20%;
   margin: 5% 0px;
+  z-index: 100;
+  background-color: #ffffff;
 }
 #about {
   width: 100%;
@@ -247,7 +278,7 @@ main {
   color: #194e91;
   display: flex;
   justify-content: center;
-  transition: all 0.3s;
+  transition: all 0.5s;
 }
 #about > button:hover {
   background-color: #194e91;
@@ -288,31 +319,38 @@ main {
   color:#ffffff;
   background-color: #333333;
   cursor: pointer;
-  transition: all 0.3s;
 }
 #brandSlideWithArrow > .material-symbols-outlined:hover{
   background-color: #194e91;
 }
-#brandSlideWithArrow > .backArrow{
+#backArrow{
   left:3%;
   transform:translateY(-50%);
 }
-#brandSlideWithArrow > .forwardArrow{
+#forwardArrow{
   right:3%;
   transform:translateY(-50%);
 }
-#brandsSlide {
+.disable{
+  opacity: 0.5;
+}
+#brandsSlide{
   border: 1px solid #194e91;
   width: 80%;
   max-width: 900px;
   height:300px;
+  overflow-x:hidden;
+  margin: 0px auto;
+  padding: 0px 2%;
+}
+#brandsMoving {
   display: flex;
-  gap:5px;
+  gap:10px;
   justify-content: flex-start;
   align-items: center;
-  margin: 0px auto;
-  padding: 0px 3%;
-  overflow-x:hidden;
+  width: 100%;
+  height:100%;
+  transition:all 0.5s;
 }
 .brandsBox {
   display: inline-block;
@@ -331,7 +369,7 @@ main {
   overflow: hidden;
 }
 .brandsBox:hover .brandsInnerBox{
-  box-shadow: 2px 2px 10px 2px #ececec;
+  box-shadow: 2px 2px 10px 2px #ccc;
 }
 .brandsInnerBox> img {
   transition:all 0.5s;
@@ -386,7 +424,7 @@ main {
   color: #194e91;
   display: flex;
   justify-content: center;
-  transition: all 0.3s;
+  transition: all 0.5s;
 }
 #brands > button:hover {
   background-color: #194e91;

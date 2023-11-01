@@ -108,13 +108,13 @@
         </div>
       </div>
       <div id="fullpageCover">
-        <p>건강한 <span>매일</span></p>
-        <p>맛있는 <span>매일</span></p>
-        <p>새로운 <span>매일</span></p>
+        <p class="coverP">건강한 <span>매일</span></p>
+        <p class="coverP">맛있는 <span>매일</span></p>
+        <p class="coverP">새로운 <span>매일</span></p>
       </div>
     </header>
     <main>
-      <div id="about">
+      <div id="about" class="pages">
         <h1>About <span>Maeil</span></h1>
         <h1>
           More than Food,<br />
@@ -133,7 +133,7 @@
         </p>
         <button>자세히 보기</button>
       </div>
-      <div id="brands">
+      <div id="brands" class="pages">
         <h1>Brands</h1>
         <p>
           유가공 제품을 통한 성장에 그치지 않고 외식, 조리식품, 식자재 유통,
@@ -142,14 +142,15 @@
         </p>
         
         <div id="brandSlideWithArrow">
-          <span class="material-symbols-outlined backArrow">
+          <span id="backArrow" class="material-symbols-outlined backArrow">
           arrow_back_ios_new
         </span>
-        <span class="material-symbols-outlined forwardArrow">
+        <span id="forwardArrow" class="material-symbols-outlined forwardArrow">
           arrow_forward_ios
         </span>
-          <div id="brandsSlide">
-            <div class="brandsBox">
+          <div id="brandsSlide"> <!--슬라이드 보여지는 부분-->
+            <div id="brandsMoving"> <!--슬라이드 움직지는 부분-->
+            <div class="brandsBox"> 
               <div class="brandsInnerBox">
                 <img src="./img/maeil-brand-1.jpg" alt="매일우유" />
                 <div class="brandsText">
@@ -201,6 +202,16 @@
             </div>
             <div class="brandsBox">
               <div class="brandsInnerBox">
+                <img src="./img/maeil-brand-13.jpg" alt="요미요미" />
+                <div class="brandsText">
+                  <span></span>
+                  <p>자연을 담은 우리아이 영양간식 요미요미</p>
+                </div>
+              </div>
+              <div class="viewmore">View more</div>
+            </div>
+            <div class="brandsBox">
+              <div class="brandsInnerBox">
                 <img src="./img/maeil-brand-5.jpeg" alt="엔요" />
                 <div class="brandsText">
                   <span></span>
@@ -229,6 +240,37 @@
               </div>
               <div class="viewmore">View more</div>
             </div>
+            <div class="brandsBox">
+              <div class="brandsInnerBox">
+                <img src="./img/maeil-brand-12.png" alt="어메이징오트" />
+                <div class="brandsText">
+                  <span></span>
+                  <p>100% 핀란드산 귀리로 만든 <br>비건 오트 음료</p>
+                </div>
+              </div>
+              <div class="viewmore">View more</div>
+            </div>
+            <div class="brandsBox">
+              <div class="brandsInnerBox">
+                <img src="./img/maeil-brand-11.jpeg" alt="상하치즈" />
+                <div class="brandsText">
+                  <span></span>
+                  <p>좋은 재료, 엄격한 공정으로 <br>완성되는 상하치즈</p>
+                </div>
+              </div>
+              <div class="viewmore">View more</div>
+            </div>
+            <div class="brandsBox">
+              <div class="brandsInnerBox">
+                <img src="./img/maeil-brand-14.jpg" alt="매일생크림" />
+                <div class="brandsText">
+                  <span></span>
+                  <p>신선한 원유로 만든 <br>매일 생크림</p>
+                </div>
+              </div>
+              <div class="viewmore">View more</div>
+            </div>
+          </div>
           </div>
         </div>
         <button>전체 브랜드 보기</button>
