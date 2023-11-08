@@ -73,27 +73,27 @@ window.onload = function () {
   //landing page animation
   const coverP1 = document.querySelectorAll(".coverP");
 
-  //scroll 시 애니메이션
-  const pages = document.querySelectorAll(".pages");
+  // //scroll 시 애니메이션
+  // const pages = document.querySelectorAll(".pages");
 
-  const obsever = new IntersectionObserver(
-    (e) => {
-      e.forEach((pages) => {
-        if (pages.isIntersecting) {
-          console.log("seeit");
-          pages.target.classList.add("visible");
-        } else {
-          console.log("cant see");
-          pages.target.classList.remove("visible");
-        }
-      });
-    },
-    {
-      threshold: 0.3,
-    }
-  );
-  obsever.observe(pages[0]);
-  obsever.observe(pages[1]);
+  // const obsever = new IntersectionObserver(
+  //   (e) => {
+  //     e.forEach((pages) => {
+  //       if (pages.isIntersecting) {
+  //         console.log("seeit");
+  //         pages.target.classList.add("visible");
+  //       } else {
+  //         console.log("cant see");
+  //         pages.target.classList.remove("visible");
+  //       }
+  //     });
+  //   },
+  //   {
+  //     threshold: 0.8,
+  //   }
+  // );
+  // obsever.observe(pages[0]);
+  // obsever.observe(pages[1]);
 
 
   //Brands 브랜드별로 hover 시 반응
