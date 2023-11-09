@@ -11,6 +11,7 @@
 }
 body {
   font-family: "Nanum Gothic", sans-serif;
+  overflow-x: hidden;
 }
 a {
   color: inherit;
@@ -224,15 +225,15 @@ header > div:hover {
 main {
   width:100vw;
   height:1600px;
-  padding: 0px 20%;
+  /* padding: 0px 20%; */
   margin: 5% 0px;
   z-index: 100;
   background-color: #ffffff;
 }
 /* intersection observer 용 class*/
 .pages{ 
-  transform: translateY(20%);
-  /* opacity:0; */
+  transform: translateY(10%);
+  opacity:0;
   transition: all 0.5s;
 }
 .visible{
@@ -242,9 +243,9 @@ main {
 }
 /* ----------------------- */
 #about {
-  width: 100%;
+  width: 60%;
   height: max-content;
-  margin: 10% 0px;
+  margin: 10% auto;
   border: 3px solid salmon;
   color: #333333;
 }
@@ -298,56 +299,84 @@ main {
   color: #ffffff;
   font-weight: 600;
 }
-#contents{
-  width: 90%;
-  margin:30px auto;
+#maeilRnd{
+  width:100vw;
+  height:fit-content;
+}
+.rndInner{
+  padding:5%;
+  width:100vw;
+  height:100%;
   display: flex;
-  flex-flow:row nowrap;
-  gap:20px;
-}
-.contentsBox{
-  flex:1;
-  height:300px;
-  border:1px solid blue;
-}
-.contentsImg{
-  width:100%;
-  height:80%;
-  overflow: hidden;
-  position:relative;
-}
-.contentsImg > img{
-  width:100%;
-}
-.contentsNum{
-  width:auto;
-  height:auto;
-  text-align: right;
-  padding:5px 10px;
-  background-color: rgba(255, 255, 255, 0.7);
-  border:1px solid black;
+  align-items: center;
+  gap:30px;
+  flex-flow:column nowrap;
   position:absolute;
-  bottom:0;
+  top:0;
   left:0;
 }
-.contentsNum > p{
+.rndInner > p{
+  font-size: 3rem;
   font-weight: 600;
+  color:#ffffff;
+  text-align: center;
 }
-.contentsNum > p > span{
-  font-size:5rem;
-  font-weight:600;
+.rndInner > p > span{
   color:#194e91;
 }
-.contentsText{
-  margin:5px auto;
-  border:1px solid black;
-  padding:5px;
+.rndImgs{
+  width: 80%;
+  padding:5%;
+  background-color: #ffffff63;
+  display: flex;
+  flex-flow:row nowrap;
+  justify-content: space-between;
+}
+.rndImgBox{
+  width:40%;
+  position:relative;
+}
+.rndImgBox > img{
+  width:100%;
+}
+.rndText{
+  position: absolute;
+  bottom:-15%;
+  left:3%;
+  padding:2%;
+  width: 110%;
+  background-color: #ffffffda;
+}
+.rndText > h3{
+  margin:10px 0px;
+}
+.rndText > p{
+  line-height: 24px;
+}
+.rndInner > button {
+  font-family: "Nanum Gothic", sans-serif;
+  width: 250px;
+  padding: 15px;
+  font-size: 14px;
+  margin: 0 auto;
+  outline: none;
+  border: 1px solid #194e91;
+  background-color: #ffffff;
+  color: #194e91;
+  display: flex;
+  justify-content: center;
+  transition: all 0.5s;
+  cursor: pointer;
+}
+.rndInner > button:hover {
+  background-color: #194e91;
+  color: #ffffff;
+  font-weight: 600;
 }
 #brands {
-  display: inline-block;
-  width: 100%;
+  width: 60%;
   height: 700px;
-  margin: 10% 0px;
+  margin: 10% auto;
   border: 3px solid salmon;
   color: #333333;
   position:relative;

@@ -46,8 +46,10 @@ window.onload = function () {
     if (num === 0) {
       backArrow.classList.add("disable");
       forwardArrow.classList.remove("disable");
-    } else if (num === 2) {
+    } else if (num < 2) {
       backArrow.classList.remove("disable");
+      
+    } else if(num === 2){
       forwardArrow.classList.add("disable");
     }
   }
@@ -57,7 +59,7 @@ window.onload = function () {
   backArrow.addEventListener("click", function () {
     if (num === 0) return;
     num -= 1;
-    brandsMoving.style.transform = `translateX(-${837 * num}px)`;
+    brandsMoving.style.transform = `translateX(-${837 * num}px)`; //px로 작업하니까 브라우저 넓이 변경 시 문제생김
 
     disableBtn();
   });
@@ -74,26 +76,27 @@ window.onload = function () {
   const coverP1 = document.querySelectorAll(".coverP");
 
   // //scroll 시 애니메이션
-  // const pages = document.querySelectorAll(".pages");
+  const pages = document.querySelectorAll(".pages");
 
-  // const obsever = new IntersectionObserver(
-  //   (e) => {
-  //     e.forEach((pages) => {
-  //       if (pages.isIntersecting) {
-  //         console.log("seeit");
-  //         pages.target.classList.add("visible");
-  //       } else {
-  //         console.log("cant see");
-  //         pages.target.classList.remove("visible");
-  //       }
-  //     });
-  //   },
-  //   {
-  //     threshold: 0.8,
-  //   }
-  // );
-  // obsever.observe(pages[0]);
-  // obsever.observe(pages[1]);
+  const obsever = new IntersectionObserver(
+    (e) => {
+      e.forEach((pages) => {
+        if (pages.isIntersecting) {
+          console.log("seeit");
+          pages.target.classList.add("visible");
+        } else {
+          console.log("cant see");
+          pages.target.classList.remove("visible");
+        }
+      });
+    },
+    {
+      threshold: 0.3,
+    }
+  );
+  obsever.observe(pages[0]);
+  obsever.observe(pages[1]);
+  obsever.observe(pages[2]);
 
 
   //Brands 브랜드별로 hover 시 반응
