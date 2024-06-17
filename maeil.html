@@ -1,0 +1,424 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>매일유업</title>
+    <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0"
+    />
+    <script
+    src="https://kit.fontawesome.com/7200e6d681.js"
+    crossorigin="anonymous"
+  ></script>
+    <link href="./css/project02.css" rel="stylesheet" />
+  </head>
+  <body class="preload">
+    <a href="#" class="topBtn"><svg xmlns="http://www.w3.org/2000/svg" height="48px" viewBox="0 -960 960 960" width="48px" fill="#5f6368"><path d="M450-160v-526L202-438l-42-42 320-320 320 320-42 42-248-248v526h-60Z"/></svg></a>
+    <header>
+      <div id="topHeader">
+        <div id="logo">
+          <a href="maeil.html">
+          <img src="img/maeil-logo.png" alt="mainLogo" />
+          </a>
+        </div>
+        <div id="mainMenu">
+          <div id="subTab"></div>
+          <ul>
+            <li>
+              <a href="./aboutmaeil.html"
+                ><span class="material-symbols-outlined"> arrow_drop_down </span
+                >회사소개
+              </a>
+              <ul class="subMenu">
+                <li><a href="./aboutmaeil.html">기업소개</a></li>
+                <li><a href="./aboutmaeil.html">CEO인사말</a></li>
+                <li><a href="./aboutmaeil.html">가치체계</a></li>
+                <li><a href="./aboutmaeil.html">글로벌사업</a></li>
+              </ul>
+            </li>
+            <li>
+              <a href="./notready.html"
+                ><span class="material-symbols-outlined"> arrow_drop_down </span
+                >브랜드소개
+              </a>
+              <ul class="subMenu">
+                <li><a href="./notready.html">우유</a></li>
+                <li><a href="./notready.html">발효유</a></li>
+                <li><a href="./notready.html">주스</a></li>
+                <li><a href="./notready.html">커피</a></li>
+                <li><a href="./notready.html">치즈</a></li>
+                <li><a href="./notready.html">건강식</a></li>
+                <li><a href="./notready.html">전체</a></li>
+              </ul>
+            </li>
+            <li>
+              <a href="./notready.html"
+                ><span class="material-symbols-outlined"> arrow_drop_down </span
+                >경영ㆍ공헌
+              </a>
+              <ul class="subMenu">
+                <li><a href="./notready.html">상생경영</a></li>
+                <li><a href="./notready.html">윤리경영</a></li>
+                <li><a href="./notready.html">가족친화경영</a></li>
+                <li><a href="./notready.html">사회공헌</a></li>
+                <li><a href="./notready.html">나눔활동</a></li>
+                <li><a href="./notready.html">나눔소식</a></li>
+              </ul>
+            </li>
+            <li>
+              <a href="./notready.html"
+                ><span class="material-symbols-outlined"> arrow_drop_down </span
+                >투자정보
+              </a>
+              <ul class="subMenu">
+                <li><a href="./notready.html">경영정보</a></li>
+                <li><a href="./notready.html">재무정보</a></li>
+                <li><a href="./notready.html">공시정보</a></li>
+                <li><a href="./notready.html">전자공고</a></li>
+                <li><a href="./notready.html">IR자료실</a></li>
+              </ul>
+            </li>
+            <li>
+              <a href="cscenter.html"
+                ><span class="material-symbols-outlined"> arrow_drop_down </span
+                >고객센터
+              </a>
+              <ul class="subMenu">
+                <li><a href="cscenter.html">고객문의</a></li>
+                <li><a href="cscenter.html">자주묻는 질문</a></li>
+                <li><a href="#">제품개선사례</a></li>
+                <li><a href="#">공지사항</a></li>
+                <li><a href="#">개인정보처리방침</a></li>
+              </ul>
+            </li>
+          </ul>
+        </div>
+        <div id="search">
+          <div id="inputIconBox">
+            <input
+              type="text"
+              name=""
+              id="searchInput"
+              placeholder="검색어를 입력하세요"
+            />
+            <span class="material-symbols-outlined"> search </span>
+          </div>
+        </div>
+        <div id="icons">
+          <!--웹에서 안보이게 / 메뉴 클릭시 innerText = close-->
+          <span class="material-symbols-outlined"> menu </span>
+        </div>
+      </div>
+    </header>
+    <div id="fullpageSwipe">
+      <div class="fullpageCover">
+        <div class="fullImgBox active"><img src="./img/austin-wilcox-lAueE1Zf9tY-unsplash.jpg" alt="풀페이지 커버1"></div>
+        <div class="fullImgBox"><img src="./img/patty-brito-B0Sh1Zi2b2k-unsplash.jpg" alt="풀페이지 커버2"></div>
+        <div class="fullImgBox"><img src="./img/wisconsin-1845238_1280.jpg" alt="풀페이지 커버3"></div>
+      </div>
+      <div class="fullpageText">
+        <div class="textSet textactive">
+          <p class="textEvent">건강한 <span>매일</span></p>
+          <p class="textEvent">맛있는 <span>매일</span></p>
+          <p class="textEvent">새로운 <span>매일</span></p>
+        </div>
+        <div class="textSet">
+          <p class="textEvent"><span>Since 1969</span></p>
+          <p class="textEvent">건강한 식문화를 위해</p>
+          <p class="textEvent">한 길을 걸어갑니다</p>
+        </div>
+        <div class="textSet">
+          <p class="textEvent">더 많은 연구와</p>
+          <p class="textEvent">끊임없는 노력으로</p>
+          <p class="textEvent">매일 성장합니다</p>
+        </div>
+        <div class="spanSet">
+          <span class="slideSpan activate"></span>
+          <span class="slideSpan"></span>
+          <span class="slideSpan"></span>
+        </div>
+      </div>
+    </div>
+    <main>
+      <div id="companyInfo" class="pages">
+        <img src="./img/anita-jankovic-c7PT4PZMcNA-unsplash.jpg" alt="회사 소개 배경">
+        <div class="innerPage">
+            <p>매일 묻고 매일 답하는 성실한 자세로 성장하는 매일유업은</p>
+            <p>모두가 건강하고 행복한</br>함께하는 사회를 만들겠습니다.</p>
+            <div class="boxSet">
+                <div id="misson" class="infoBoxes">
+                    <p class="titles">More than Food, Beyond Korea</p>
+                    <p>새로운 식문화를 창조하며 글로벌로 나아갑니다.</p>
+                    <a href="./aboutmaeil.html"><p class="viewMore">바로가기</p></a>
+                </div>
+                <div></div>
+                <div></div>
+                <div id="history" class="infoBoxes">
+                    <p class="titles">1969 ~ 현재</p>
+                    <p>2023.03 매일유업, 2023년 한국에서 가장 존경받는 기업 유가공부문 6년 연속 1위<br>
+                        2022.12 북경매일, 스타벅스 차이나와 B2B 계약 <br>
+                        2020.05 매일사코페니아연구소, 아주대학교의료원과 MOU 체결 <br>
+                        2018.04 진암사회복지재단, 종로 건강가정·다문화가족지원센터에 분유 지원
+                    </p>
+                </div>
+                <div id="brandsInfo" class="infoBoxes">
+                    <p class="titles">40 brands</p>
+                    <p>매일유업은 다양한 분야에 도전하며 시장의 흐름을 이끌어갑니다.</p>
+                </div>
+                <div id="values" class="infoBoxes">
+                    <p class="titles">매일의 가치</p>
+                    <div class="valueBox">
+                        <div class="value">
+                            <img src="./img/maeilvalue1.jpg" alt="창의">
+                            <p>창의</p>
+                        </div>
+                        <div class="value">
+                            <img src="./img/maeilvalue2.jpg" alt="소통">
+                            <p>소통</p>
+                        </div>
+                        <div class="value">
+                            <img src="./img/maeilvalue3.jpg" alt="열정">
+                            <p>열정</p>
+                        </div>
+                        <div class="value">
+                            <img src="./img/maeilvalue4.jpg" alt="상생">
+                            <p>상생</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+      <div id="brands" class="pages">
+        <h1>Brands</h1>
+        <p>
+          유가공 제품을 통한 성장에 그치지 않고 외식, 조리식품, 식자재 유통,
+          식문화 서비스 사업까지 ! <br />
+          매일유업은 다양한 분야에 도전하며 시장의 흐름을 이끌어가고 있습니다.
+        </p>
+
+        <div id="brandSlideWithArrow">
+          <span id="backArrow" class="material-symbols-outlined backArrow">
+            arrow_back_ios_new
+          </span>
+          <span
+            id="forwardArrow"
+            class="material-symbols-outlined forwardArrow"
+          >
+            arrow_forward_ios
+          </span>
+          <div id="brandsSlide" >
+            <!--슬라이드 보여지는 부분-->
+            <div id="brandsMoving" class="autoplay">
+              <!--슬라이드 움직여지는 부분-->
+              <div class="brandsBox">
+                <div class="brandsInnerBox">
+                  <img src="./img/maeil-brand-1.jpg" alt="매일우유" />
+                  <div class="brandsText">
+                    <span></span>
+                    <p>매일유업의 대표 우유 브랜드</p>
+                  </div>
+                </div>
+                <div class="viewmore">View More</div>
+              </div>
+              <div class="brandsBox">
+                <div class="brandsInnerBox">
+                  <img src="./img/maeil-brand-2.jpeg" alt="소화가잘되는우유" />
+                  <div class="brandsText">
+                    <span></span>
+                    <p>유당 0%, 편안한 락토프리 우유</p>
+                  </div>
+                </div>
+                <div class="viewmore">View more</div>
+              </div>
+              <div class="brandsBox">
+                <div class="brandsInnerBox">
+                  <img src="./img/maeil-brand-3.jpg" alt="상하목장" />
+                  <div class="brandsText">
+                    <span></span>
+                    <p>자연 그대로 정직하게, <br />믿음직한 유기농 브랜드</p>
+                  </div>
+                </div>
+                <div class="viewmore">View more</div>
+              </div>
+              <div class="brandsBox">
+                <div class="brandsInnerBox">
+                  <img src="./img/maeil-brand-6.jpg" alt="썬업" />
+                  <div class="brandsText">
+                    <span></span>
+                    <p>매일 맛있고 건강하게 마시는 <br />주스 브랜드</p>
+                  </div>
+                </div>
+                <div class="viewmore">View more</div>
+              </div>
+              <div class="brandsBox">
+                <div class="brandsInnerBox">
+                  <img src="./img/maeil-brand-10.jpg" alt="앱솔루트" />
+                  <div class="brandsText">
+                    <span></span>
+                    <p>아기에게 딱 맞는 제품을 만드는 유아식 브랜드</p>
+                  </div>
+                </div>
+                <div class="viewmore">View more</div>
+              </div>
+              <div class="brandsBox">
+                <div class="brandsInnerBox">
+                  <img src="./img/maeil-brand-13.jpg" alt="요미요미" />
+                  <div class="brandsText">
+                    <span></span>
+                    <p>자연을 담은 우리아이 영양간식 요미요미</p>
+                  </div>
+                </div>
+                <div class="viewmore">View more</div>
+              </div>
+              <div class="brandsBox">
+                <div class="brandsInnerBox">
+                  <img src="./img/maeil-brand-5.jpeg" alt="엔요" />
+                  <div class="brandsText">
+                    <span></span>
+                    <p>온가족이 즐기는 <br />프로바이오틱 요구르트</p>
+                  </div>
+                </div>
+                <div class="viewmore">View more</div>
+              </div>
+              <div class="brandsBox">
+                <div class="brandsInnerBox">
+                  <img src="./img/maeil-brand-7.jpg" alt="바리스타룰스" />
+                  <div class="brandsText">
+                    <span></span>
+                    <p>1% 고산지의 프리미엄 원두로 맞춤 로스팅</p>
+                  </div>
+                </div>
+                <div class="viewmore">View more</div>
+              </div>
+              <div class="brandsBox">
+                <div class="brandsInnerBox">
+                  <img src="./img/maeil-brand-9.jpg" alt="아몬드브리즈" />
+                  <div class="brandsText">
+                    <span></span>
+                    <p>100% 캘리포니아산 <br />프리미엄 아몬드음료</p>
+                  </div>
+                </div>
+                <div class="viewmore">View more</div>
+              </div>
+              <div class="brandsBox">
+                <div class="brandsInnerBox">
+                  <img src="./img/maeil-brand-12.png" alt="어메이징오트" />
+                  <div class="brandsText">
+                    <span></span>
+                    <p>100% 핀란드산 귀리로 만든 <br />비건 오트 음료</p>
+                  </div>
+                </div>
+                <div class="viewmore">View more</div>
+              </div>
+              <div class="brandsBox">
+                <div class="brandsInnerBox">
+                  <img src="./img/maeil-brand-11.jpeg" alt="상하치즈" />
+                  <div class="brandsText">
+                    <span></span>
+                    <p>좋은 재료, 엄격한 공정으로 <br />완성되는 상하치즈</p>
+                  </div>
+                </div>
+                <div class="viewmore">View more</div>
+              </div>
+              <div class="brandsBox">
+                <div class="brandsInnerBox">
+                  <img src="./img/maeil-brand-14.jpg" alt="매일생크림" />
+                  <div class="brandsText">
+                    <span></span>
+                    <p>신선한 원유로 만든 <br />매일 생크림</p>
+                  </div>
+                </div>
+                <div class="viewmore">View more</div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <button>전체 브랜드 보기</button>
+      </div>
+      <div id="maeilRnd" class="pages">
+        <img src="./img/landscape-farm.jpg" alt="">
+        <div class="rndInner">
+          <p>더 많은 <span>연구</span>와 끊임없는 <span>노력</span>으로 <br>새로운 식문화를 창조합니다</p>
+          <div class="rndImgs">
+          <div class="rndImgBox">
+            <img src="./img/maeil-r&d.jpg" alt="">
+            <div class="rndText">
+              <h3>R & D 역량 강화를 위한 끊임없는 노력</h3>
+            <p>우수한 연구인력과 최첨단 연구시설을 꾸준한 확보와 
+              해외 선진 유가공 회사와의 전략적 제휴를 통한 R & D 역량의 지속적 강화</p>
+            </div>
+          </div>
+          <div class="rndImgBox">
+            <img src="./img/maeil-r&d-2.jpg" alt="">
+            <div class="rndText">
+              <h3>인류의 건강한 삶을 위한 투자·열정</h3>
+            <p>유명저널 등에 200여 건의 연구논문 및 학술자료 게재와
+              선진기술 연구기관과의 제휴로 최첨단 연구개발에 대한 멈추지 않는 투자</p>
+            </div>
+          </div>
+        </div>
+        <button>자세히 보기</button>
+        </div>
+      </div>
+    </main>
+    <footer>
+      <div class="upperFooter">
+        <div class="footerLogo">
+          <img src="img/maeil-logo.png" alt="footerLogo">
+        </div>
+        <div class="contactWay">
+          <div class="number">
+            <p>대표전화</p>
+            <p>1588-1539</p>
+          </div>
+          <div class="snsAcc">
+            <ul class="snsList">
+              <li>
+                <a href="https://www.instagram.com/freshmaeil/" target="_blank">
+                  <i class="fa-brands fa-instagram fa-2xl"></i>
+                </a>
+              </li>
+              <li>
+                <a href="https://www.facebook.com/maeili" target="_blank">
+                  <i class="fa-brands fa-facebook fa-2xl"></i>
+                </a>
+              </li>
+              <li>
+                <a href="https://www.youtube.com/user/maeili2mo">
+                  <i class="fa-brands fa-youtube fa-2xl"></i>
+                </a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="lowerFooter">
+          <ul class="footerMenu">
+            <li>
+              <a href="#">개인정보처리방침</a>
+            </li>
+            <li>
+              <a href="#">이용약관</a>
+            </li>
+            <li>
+              <a href="#">전자입찰(협력사용)</a>
+            </li>
+            <li>
+              <a href="#">오시는길</a>
+            </li>
+          </ul>
+          <div class="address">
+            <p>서울시 종로구 종로 1길 50 더 케이 트윈타워 A동</p>
+            <p class="copyright">Copyright(c) 2016 by Maeil Dairies Co.Ltd All rights reserved.</p>
+          </div>
+      </div>
+    </footer>
+    <script type="text/javascript" src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+  </body>
+  <script src="./js/project02.js"></script>
+</html>
