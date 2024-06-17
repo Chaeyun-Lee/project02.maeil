@@ -8,6 +8,7 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  scroll-behavior: smooth;
 }
 body {
   font-family: "Nanum Gothic", sans-serif;
@@ -20,19 +21,41 @@ a {
 ul {
   list-style-type: none;
 }
+.preload {
+  transition: none !important;
+  -webkit-transition: none !important;
+  -moz-transition: none !important;
+  -ms-transition: none !important;
+  -o-transition: none !important;
+}
+.topBtn{
+  visibility: hidden;
+  position: fixed;
+  bottom:5%;
+  right:5%;
+  display: block;
+  text-align: center;
+  width:70px;
+  height:70px;
+  padding:10px 0;
+  border-radius: 50px;
+  cursor: pointer;
+  background-color: #ffffff;
+  box-shadow: 0 0 10px 2px #ccc;
+  z-index: 50;
+}
 header {
   background-size: cover;
   width: 100vw;
-  height: 100vh;
-  background: url("../img/austin-wilcox-lAueE1Zf9tY-unsplash.jpg");
+  height: fit-content;
+  /* background: url("../img/austin-wilcox-lAueE1Zf9tY-unsplash.jpg");
   background-size: cover;
-  background-repeat: no-repeat;
+  background-repeat: no-repeat; */
 }
 #topHeader {
   display: flex;
   height: 80px;
   width: 100vw;
-  background-color: #33333310;
 }
 #logo {
   flex: 1;
@@ -123,7 +146,8 @@ header > div:hover {
   top: 100%;
   left: 50%;
   transform: translateX(-50%);
-  border-radius: 0px 0px 50px 80px;
+  border-radius: 0px 0px 50px 50px;
+  border: 1px solid #ececec;
   width: 100vw;
   height: 300px;
   display: none;
@@ -158,21 +182,23 @@ header > div:hover {
   display: flex;
   width: fit-content;
   position: absolute;
-  bottom: 0;
+  bottom: 10px;
   left: 50%;
   transform: translateX(-50%);
 }
 #searchInput {
   width: 100%;
   height: 30px;
+  min-width: 200px;
   padding-left: 15px;
-  border: 1px solid #194e91;
-  border-radius: 20px;
+  background-color: #ececec;
+  border:none;
+  border-bottom: 1px solid #194e91;
+  outline: none;
 }
 #searchInput:focus,
 #searchInput:active {
-  border: 2px solid #194e91;
-  outline: none;
+  border-bottom: 2px solid #194e91;
 }
 #inputIconBox > span {
   color: #194e91;
@@ -189,44 +215,89 @@ header > div:hover {
 #icons {
   display: none;
 }
-#fullpageCover {
+#fullpageSwipe{
+  position:relative;
+  display: block;
   width: 100vw;
   height: 100vh;
-  background-color: #33333310;
-  position: relative;
 }
-#fullpageCover > p {
+.fullpageCover {
+  position:relative;
+  width: 100vw;
+  height: 100vh;
+}
+.fullpageText{
+  position:absolute;
+  top:0;
+  width: 100vw;
+  height: 100vh;
+}
+.fullImgBox{
+  width:100%;
+  height:100vh;
+  position:absolute;
+  top:0;
+  left:0;
+  overflow: hidden;
+  opacity: 0;
+  transition: all 1.5s ease;
+}
+.fullImgBox.active{
+  opacity: 1;
+}
+.fullImgBox img{
+  width: 100%;
+  filter: brightness(0.7);
+}
+.textSet{
+  width:700px;
+  position:absolute;
+  top:50%;
+  left:50%;
+  opacity: 0;
+  transform: translate(-50%,-30%);
+  transform-origin: center;
+}
+.textSet.textactive{
+  opacity: 1;
+  transform: translate(-50%,-50%);
+  transition:transform 1.5s ease, opacity 1.5s ease;
+}
+.textSet > p {
+  text-align: center;
   font-size: 4rem;
   font-weight: 600;
   color: #ffffff;
+  margin:3%;
 }
-#fullpageCover > p > span {
+.textSet > p > span {
   color: #194e91;
 }
-#fullpageCover > p:first-child {
+.spanSet{
   position: absolute;
-  top: 40%;
-  left: 50%;
-  transform: translate(-50%, -50%);
+  bottom: 5%;
+  left:50%;
+  transform: translateX(-50%);
+  /* border:1px solid red; */
+  display: inline-block;
 }
-#fullpageCover > p:nth-child(2) {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
+.spanSet>span{
+  display: inline-block;
+  margin:0 10px;
+  width:10px;
+  height: 10px;
+  border-radius: 10px;
+  background-color: hsla(0, 0%, 30%, 0.7);
+  cursor: pointer;
 }
-#fullpageCover > p:last-child {
-  position: absolute;
-  top: 60%;
-  left: 50%;
-  transform: translate(-50%, -50%);
+.spanSet>span.activate{
+  background-color: hsla(0, 0%, 100%, 0.5);
 }
 /*-------------Main CSS 시작 ------------*/
 main {
   width:100vw;
-  height:1600px;
+  height: fit-content;
   /* padding: 0px 20%; */
-  margin: 5% 0px;
   z-index: 100;
   background-color: #ffffff;
 }
@@ -242,62 +313,115 @@ main {
   opacity: 1;
 }
 /* ----------------------- */
-#about {
-  width: 60%;
-  height: max-content;
-  margin: 10% auto;
-  border: 3px solid salmon;
-  color: #333333;
-}
-#about > h1:first-child {
-  font-family: "Raleway", sans-serif;
-  font-size: 4rem;
-  border: 1px solid saddlebrown;
-  margin-bottom: 5%;
-}
-#about > h1:nth-child(2) {
-  font-family: "Raleway", sans-serif;
-  font-size: 3rem;
-  font-weight: 400;
-  border: 1px solid saddlebrown;
-  text-align: center;
-  margin: 0px auto;
-}
-#about span {
-  color: #194e91;
-}
-#about > h3 {
-  text-align: center;
-  margin: 3% 0px;
-  font-size: 2rem;
-  font-weight: 600;
-  width: 100%;
-}
-#about > p {
-  border: 1px solid saddlebrown;
-  width: 70%;
-  margin: 0px auto;
-  line-height: 1.75rem;
-}
-#about > button {
-  font-family: "Nanum Gothic", sans-serif;
-  width: 200px;
-  padding: 10px;
-  font-size: 14px;
-  margin: 3% auto;
-  outline: none;
-  border: 1px solid #194e91;
-  background-color: #ffffff;
-  color: #194e91;
-  display: flex;
-  justify-content: center;
-  transition: all 0.5s;
-  cursor: pointer;
-}
-#about > button:hover {
-  background-color: #194e91;
+#companyInfo{
+  width:100vw;
+  height:100vh;
+  filter:contrast(0.8);
   color: #ffffff;
+}
+#companyInfo>img{
+  width:100vw;
+  height: 100vh;
+  object-fit: cover;
+}
+.innerPage{
+  width: 70%;
+  height: 100vh;
+  margin: 0 auto;
+  padding:10% 0;
+  position:absolute;
+  top:0;
+  left:50%;
+  transform: translateX(-50%);
+}
+.innerPage>p:first-child{
+  font-size: 1.5em;
+}
+.innerPage>p:nth-child(2){
+  font-size: 3em;
   font-weight: 600;
+}
+.boxSet{
+  width:100%;
+  margin-top:20px;
+  height: fit-content;
+  display: grid;
+  grid-template-columns: 500px 200px 500px;
+  grid-template-rows: 200px 200px;
+
+}
+.infoBoxes{
+  width:200px;
+  height:200px;
+  padding:20px;
+  background-color: #ffffff;
+  color: #333333;
+  display: inline-block;
+  margin:0;
+}
+.titles{
+  font-size: 26px;
+  font-weight: 600;
+  margin:10px auto;
+}
+.infoBoxes>p:last-child{
+  font-size: 14px;
+  letter-spacing:0px;
+  line-height: 1.5em;
+}
+#misson{
+  width:500px;
+  position:relative;
+}
+#misson>p:first-child{
+  color:#194e91;
+}
+.viewMore{
+  display: inline-block;
+  width:90px;
+  text-align: center;
+  padding:5px;
+  border-bottom:2px solid #194e91;
+  font-size: 14px;
+  transition:all 0.3s;
+  cursor: pointer;
+  font-weight: 600;
+  position:absolute;
+  bottom:10%;
+  right:5%;
+}
+.viewMore:hover{
+  background-color: #ececec;
+  color:#194e91;
+}
+#history{
+  width:500px;
+  background-color: #ececec;
+}
+#noshowBox{
+  background-color: transparent;
+}
+#brandsInfo{
+  width:200px;
+  background-color: #194e91;
+  color:#ffffff;
+  border:none;
+}
+#values{
+  width:500px;
+}
+.valueBox{
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-around;
+}
+.value{
+  text-align: center;
+  letter-spacing: 1px;
+  font-weight:600;
+}
+#brands{
+  width:80%;
 }
 #maeilRnd{
   width:100vw;
@@ -352,6 +476,7 @@ main {
 }
 .rndText > p{
   line-height: 24px;
+  font-size:0.9rem;
 }
 .rndInner > button {
   font-family: "Nanum Gothic", sans-serif;
@@ -377,7 +502,10 @@ main {
   width: 60%;
   height: 700px;
   margin: 10% auto;
-  border: 3px solid salmon;
+  padding-top:20px;
+  border-top: 10px solid;
+  border-image: linear-gradient(to right, #194e91 0%, transparent 70%);
+  border-image-slice: 1;
   color: #333333;
   position:relative;
   transition: all 0.5s;
@@ -385,18 +513,17 @@ main {
 #brands > h1:first-child {
   font-family: "Raleway", sans-serif;
   font-size: 4rem;
-  border: 1px solid saddlebrown;
   margin-bottom: 5%;
 }
 #brands > p {
   text-align: center;
-  border: 1px solid saddlebrown;
   width: 70%;
   margin: 0px auto;
   line-height: 1.75rem;
 }
 #brandSlideWithArrow{
-  border:1px solid black;
+  border-radius:20px;
+  box-shadow: 0 0px 10px 3px #ececec;
   position: relative;
   margin:3% auto;
   width:100%;
@@ -425,7 +552,6 @@ main {
   opacity: 0.5;
 }
 #brandsSlide{
-  border: 1px solid #194e91;
   width: 80%;
   max-width: 900px;
   height:300px;
@@ -436,7 +562,7 @@ main {
 #brandsMoving {
   display: flex;
   gap:10px;
-  justify-content: flex-start;
+  justify-content: center;
   align-items: center;
   width: 100%;
   height:100%;
@@ -447,11 +573,14 @@ main {
   position: relative;
   cursor: pointer;
   transition:all 0.3s;
+  padding:10px 0px;
+  text-align: center;
 }
 .brandsBox:hover{
   transform:translateY(-3px);
 }
 .brandsInnerBox {
+  display: inline-block;
   position: relative;
   width: min-content;
   border-radius: 20px;
@@ -487,7 +616,8 @@ main {
   transform:translateX(-50%);
 }
 .viewmore {
-  margin: 3% 0px;
+  margin: 3% auto;
+  width: 90%;
   border-radius: 20px;
   font-size: 16px;
   font-family: "Raleway", sans-serif;
@@ -521,4 +651,94 @@ main {
   background-color: #194e91;
   color: #ffffff;
   font-weight: 600;
+}
+/* <-----------------footer-------------------> */
+footer{
+  display: block;
+  width:100%;
+  height:350px;
+  background-color: #333333;
+  color:#ccc;
+}
+.upperFooter{
+  margin:0 auto;
+  width:80%;
+  height:100px;
+  display: flex;
+  flex-flow: row nowrap;
+}
+.footerLogo{
+  width:50%;
+  padding:35px;
+}
+.contactWay{
+  width:50%;
+  padding:20px;
+  color:#ececec;
+  display: flex;
+  flex-flow: row nowrap;
+}
+.number{
+  width:50%;
+}
+.number>p:first-child{
+  font-size: 0.8em;
+  font-weight: bold;
+}
+.number>p:last-child{
+  font-size: 2.5em;
+  font-weight: bolder;
+}
+.snsAcc{
+  width:50%;
+  padding:30px 10px;
+}
+.snsList{
+  height:75%;
+  display: flex;
+  flex-flow: row nowrap;
+  align-items: center;
+  justify-content:space-evenly;
+}
+.snsList>li>a{
+  transition: all 0.3s;
+  display: block;
+  text-align: center;
+  width:85px;
+  background:radial-gradient(#333333,#404040);
+  border-radius: 100px;
+  padding:20px;
+  margin:3px;
+}
+.snsList>li>a:hover{
+  color:#1f6fd8;
+}
+.lowerFooter{
+  margin:0 auto;
+  width:80%;
+  height:250px;
+}
+.footerMenu{
+  display: flex;
+  flex-flow: row nowrap;
+  font-size: 14px;
+  padding:20px;
+}
+.footerMenu>li{
+  padding:0px 15px;
+  text-align: center;
+  border-right: 1px solid #ccc;
+}
+.footerMenu>li>a:hover{
+  border-bottom:1px solid #ccc;
+}
+.address{
+  padding:35px;
+  font-size: 12px;
+}
+.address p{
+  margin:10px 0px;
+}
+.copyright{
+  color:#1f6fd8;
 }

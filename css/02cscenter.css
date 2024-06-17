@@ -1,0 +1,198 @@
+#backImg{
+  width:100%;
+  height:300px;
+  overflow: hidden;
+  filter: brightness(0.5);
+  border: 1px solid black;
+}
+#backImg>img{
+  height: 100%;
+}
+#csCenter{
+  width: 80%;
+  height: max-content;
+  margin:0 auto;
+  margin-top:-100px;
+  padding-top:10%;
+  padding-bottom: 10%;
+  color: #333333;
+  background-color: #ffffff;
+  z-index: 1;
+  position: relative;
+}
+#csCenter > p:first-child{
+   text-align: center;
+   color:#194e91;
+   font-size: 0.9rem;
+   font-weight: 600;
+}
+#csCenter > h1:nth-child(2) {
+  font-size: 3.5rem;
+  margin-bottom: 5%;
+  text-align: center;
+}
+.pages {
+  padding: 30px 0px;
+}
+.pages > p {
+  text-align: center;
+  line-height: 1.5em;
+}
+.pages > p > span {
+  color: #ccc;
+  font-size: 0.85em;
+}
+.innerPages {
+  width:80%;
+  box-shadow: 0 0px 20px 2px #ececec;
+  border-radius: 20px;
+  padding: 40px;
+  margin: 50px auto;
+}
+.innerPages > h2 {
+  text-align: center;
+  margin-bottom: 50px;
+  font-size: 2rem;
+}
+.innerPages > h3{
+  text-align: center;
+  margin:40px auto;
+}
+.QnA > ul {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+  gap: 5px;
+}
+.QnA > ul > li {
+  border: 1px solid #ececec;
+  padding: 15px;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+.QnA > ul > li:hover {
+  font-weight: 600;
+}
+.emailForm {
+  margin: 30px auto;
+}
+
+.emailForm > ul > li {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  grid-template-rows: 1fr;
+}
+.emailForm > ul > li > span {
+  border-bottom: 1px solid #ececec;
+}
+.input > input {
+  width: 300px;
+  height: 35px;
+  font-family: "Nanum Gothic", sans-serif;
+  border: 1px solid #ececec;
+  outline: none;
+  border-radius: 10px;
+  padding: 0px 10px;
+}
+.input > input:focus {
+  border: 2px solid #ececec;
+}
+.emailForm > ul > li > .title {
+  padding: 20px;
+  text-align: center;
+  font-weight: 600;
+  background-color: #f9f9f9;
+}
+.emailForm > ul > li > .input {
+  padding: 10px;
+}
+.emailForm > ul > li:nth-child(6) {
+  height: 300px;
+}
+#category {
+  outline: none;
+  font-family: "Nanum Gothic", sans-serif;
+  border-radius: 10px;
+  border: 1px solid #ececec;
+  cursor: pointer;
+  width: 200px;
+  height: 35px;
+  padding: 0px 10px;
+  z-index: 3;
+}
+#category:focus {
+  border: 2px solid #ececec;
+}
+#category > option {
+  padding: 5px 0px;
+}
+.email:invalid{
+  border: 1px solid #ff0000;
+}
+.emailTitle {
+  overflow: hidden;
+}
+.emailContent {
+  width: 100%;
+  height: 100%;
+  font-size: 14px;
+  font-family: "Nanum Gothic", sans-serif;
+  border: 1px solid #ececec;
+  outline: none;
+  border-radius: 10px;
+  padding: 10px;
+  overflow-y: auto;
+  overflow-x: hidden;
+  resize: none;
+}
+.input> .file{
+  border:none;
+}
+.agreement {
+  border-radius: 20px;
+  border: 1px solid #ececec;
+  text-align: center;
+  margin: 30px 0px;
+}
+.agreement > p {
+  margin: 20px auto;
+}
+.agreement span {
+  font-size: 0.7rem;
+  margin: 0px 5px;
+  cursor: pointer;
+}
+.agreement > p > span {
+  border-bottom: 1px solid #333333;
+}
+.agreement > p > span:hover {
+  font-weight: 600;
+}
+.agreement > p {
+  font-size: 0.9rem;
+}
+.agreement > p > input {
+  margin: 0px 10px;
+}
+.emailForm button {
+  font-family: "Nanum Gothic", sans-serif;
+  width: 250px;
+  padding: 15px;
+  margin: 20px auto;
+  font-size: 14px;
+  outline: none;
+  border-radius: 10px;
+  border: 1px solid #194e91;
+  background-color: #ffffff;
+  color: #194e91;
+  display: flex;
+  justify-content: center;
+  transition: all 0.5s;
+  cursor: pointer;
+}
+.emailForm button:hover {
+  background-color: #194e91;
+  color: #ffffff;
+  font-weight: 600;
+}
